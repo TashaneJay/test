@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Commands Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>📄 My SSH & Home Assistant Commands</h1>
+  </header>
+
+  <main>
+    <div class="content" id="content">
+      <p>Loading commands...</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Your Name</p>
+  </footer>
+
+  <script>
+    fetch('Comands.txt')
+      .then(response => response.text())
+      .then(data => {
+        const contentDiv = document.getElementById('content');
+        contentDiv.innerHTML = '<pre>' + data + '</pre>';
+      })
+      .catch(error => {
+        document.getElementById('content').innerHTML = '<p>Error loading commands.</p>';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>

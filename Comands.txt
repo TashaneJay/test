@@ -1,0 +1,67 @@
+ssh
+
+ssh -p 8022 u0_a262@192.168.8.175
+pass Tashmainpass 
+
+If ssh is not working run this comand to start ssh
+sshd
+
+Go to service tab
+
+http://192.168.8.175:8080/developer-tools/service
+
+nano /root/.homeassistant/configuration.yaml
+
+ 
+ source /root/homeassistant_venv/bin/activate
+ nohup hass --config ~/.homeassistant > home-assistant.log 2>&1 &
+ nohup mosquitto -c ~/.mosquitto/mosquitto.conf > mosquitto.log 2>&1 &
+
+Run all in one comend 
+~/start_ha.sh
+
+Homeasisstanr resrtart
+~/restart_ha.sh
+
+Mosquitto restart
+~/restart_mosquitto.sh
+
+vs code ip
+
+http://192.168.8.175:9090
+
+
+
+Fine automation.yaml locaion 
+
+find / -name automations.yaml 2>/dev/null
+           path
+nano /root/.homeassistant/automations.yaml
+
+
+      Downlord automation.yaml
+Move the File to a User-Accessible Location (Temporary): 
+cp /root/.homeassistant/automations.yaml /data/data/com.termux/files/home/
+Run the scp Command Again(From pc not in termux(shh)):
+scp -P 8022 root@192.168.8.175:/data/data/com.termux/files/home/automations.yaml "C:/Users/pavit/OneDrive/Desktop/Homeassistant/"
+
+
+wirshark filtor to WOL
+udp.port == 9
+
+
+
+
+
+
+
+
+psshutdown -s -t 0 -u pavit-p Tashane276271-c \\192.168.8.128 
+
+
+
+
+
+
+
+
